@@ -18,5 +18,5 @@ for file in "$@" ; do
 	cp -vr "$file" "${TMPDIR}${NPATH}"
 done
 
-rsync -vvxra --specials --devices --progress -I ${TMPDIR}/* rsync://root@192.168.1.23:/uploadrf/overlays/${MAC}/
+rsync -vvxra --specials --devices --progress -c ${TMPDIR}/ rsync://root@192.168.1.23:/uploadrf/overlays/${MAC}
 rm -rf ${TMPDIR}
